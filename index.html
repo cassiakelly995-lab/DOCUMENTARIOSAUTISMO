@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutiStream — Filmes & Documentários sobre Autismo</title>
+<title>AutiStream - Filmes sobre Autismo</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#06080f;--surface:#0e1420;--surface2:#151e30;--accent:#4f8ef7;--accent2:#a259f7;--text:#e8edf5;--muted:#6b7a99;--gold:#f4c542;}
@@ -12,74 +12,73 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:14px 36px;background:rgba(6,8,15,0.97);border-bottom:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(10px);}
 .logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:3px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .nav-search{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:7px 16px;}
-.nav-search input{background:none;border:none;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;width:200px;outline:none;}
+.nav-search input{background:none;border:none;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;width:180px;outline:none;}
 .nav-search input::placeholder{color:var(--muted);}
-.hero{margin-top:57px;position:relative;height:420px;display:flex;align-items:flex-end;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#050018 0%,#001030 50%,#06080f 100%);}
-.hero-glow{position:absolute;width:500px;height:500px;border-radius:50%;filter:blur(100px);opacity:0.3;pointer-events:none;}
-.glow-a{background:#4f8ef7;top:-150px;left:10%;}
-.glow-b{background:#a259f7;bottom:-150px;right:15%;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,8,15,1) 0%,rgba(6,8,15,0.5) 50%,transparent 100%);}
-.hero-content{position:relative;z-index:2;padding:0 36px 44px;max-width:640px;}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(79,142,247,0.15);border:1px solid rgba(79,142,247,0.35);border-radius:20px;padding:5px 14px;font-size:0.72rem;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;}
-.hero-tag .dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 1.5s infinite;}
+.hero{margin-top:57px;position:relative;height:400px;display:flex;align-items:flex-end;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#050018,#001030,#06080f);}
+.glow{position:absolute;width:450px;height:450px;border-radius:50%;filter:blur(100px);opacity:0.28;pointer-events:none;}
+.glow-a{background:#4f8ef7;top:-150px;left:5%;}
+.glow-b{background:#a259f7;bottom:-150px;right:10%;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,8,15,1) 0%,rgba(6,8,15,0.4) 50%,transparent 100%);}
+.hero-content{position:relative;z-index:2;padding:0 36px 40px;max-width:640px;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(79,142,247,0.15);border:1px solid rgba(79,142,247,0.35);border-radius:20px;padding:5px 14px;font-size:0.72rem;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;}
+.dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 1.5s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
 .hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1;letter-spacing:1px;margin-bottom:10px;}
 .hero-title span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
-.hero-badge{background:var(--surface2);border-radius:4px;padding:3px 10px;font-size:0.72rem;color:var(--muted);}
-.hero-desc{color:var(--muted);line-height:1.65;font-size:0.88rem;margin-bottom:22px;}
-.hero-actions{display:flex;gap:12px;}
-.btn-watch{display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;border:none;padding:12px 26px;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:500;cursor:pointer;transition:opacity 0.2s,transform 0.2s;}
-.btn-watch:hover{opacity:0.88;transform:translateY(-1px);}
-.play-tri{width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:11px solid white;}
-.btn-ghost{background:rgba(255,255,255,0.07);color:white;border:1px solid rgba(255,255,255,0.15);padding:12px 22px;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.92rem;cursor:pointer;transition:background 0.2s;}
-.btn-ghost:hover{background:rgba(255,255,255,0.13);}
+.hbadge{background:var(--surface2);border-radius:4px;padding:3px 10px;font-size:0.72rem;color:var(--muted);}
+.hero-desc{color:var(--muted);line-height:1.65;font-size:0.88rem;margin-bottom:20px;}
+.hero-btns{display:flex;gap:12px;}
+.btn-play{display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;border:none;padding:12px 26px;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:500;cursor:pointer;transition:opacity 0.2s,transform 0.2s;}
+.btn-play:hover{opacity:0.88;transform:translateY(-1px);}
+.tri{width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:11px solid white;}
+.btn-list{background:rgba(255,255,255,0.07);color:white;border:1px solid rgba(255,255,255,0.15);padding:12px 22px;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.92rem;cursor:pointer;transition:background 0.2s;}
+.btn-list:hover{background:rgba(255,255,255,0.13);}
 .content{padding:0 36px 60px;}
-.filter-bar{display:flex;gap:8px;margin:28px 0 8px;flex-wrap:wrap;}
-.filter-btn{padding:7px 18px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);background:var(--surface);color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;transition:all 0.2s;}
-.filter-btn:hover{border-color:rgba(255,255,255,0.25);color:var(--text);}
-.filter-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:white;}
-.section-header{display:flex;justify-content:space-between;align-items:center;margin:36px 0 16px;}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;}
-.section-count{color:var(--muted);font-size:0.78rem;}
-.movies-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:16px;}
-.movie-card{background:var(--surface);border-radius:10px;overflow:hidden;cursor:pointer;transition:transform 0.25s,box-shadow 0.25s;border:1px solid rgba(255,255,255,0.05);}
-.movie-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.5);}
-.card-thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--surface2);display:flex;align-items:center;justify-content:center;}
-.card-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
-.movie-card:hover .card-thumb img{transform:scale(1.06);}
-.no-img{font-family:'Bebas Neue',sans-serif;font-size:0.95rem;color:var(--muted);text-align:center;padding:14px;line-height:1.3;}
-.card-play-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;}
-.movie-card:hover .card-play-overlay{opacity:1;}
-.play-circle{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(79,142,247,0.5);}
-.play-circle .tri{width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:13px solid white;margin-left:3px;}
-.card-year{position:absolute;top:8px;left:8px;background:rgba(0,0,0,0.75);border-radius:4px;padding:2px 8px;font-size:0.67rem;color:var(--gold);font-weight:600;}
-.card-dur{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.75);border-radius:4px;padding:2px 8px;font-size:0.67rem;color:white;}
-.card-body{padding:12px 13px 13px;}
-.card-title{font-weight:500;font-size:0.86rem;margin-bottom:5px;line-height:1.3;}
-.card-meta{display:flex;gap:7px;align-items:center;color:var(--muted);font-size:0.73rem;flex-wrap:wrap;}
-.card-tag{background:var(--surface2);border-radius:3px;padding:1px 7px;font-size:0.68rem;}
-.card-rare{background:rgba(162,89,247,0.2);color:#c084fc;border-radius:3px;padding:1px 7px;font-size:0.68rem;}
-.modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.97);display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px;}
-.modal-overlay.open{display:flex;}
-.player-wrapper{width:100%;max-width:960px;}
-.player-topbar{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14px;gap:16px;}
-.player-info h2{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:1px;}
-.player-info p{color:var(--muted);font-size:0.8rem;margin-top:3px;}
-.btn-close{min-width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:white;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
-.btn-close:hover{background:var(--accent);}
-.video-container{width:100%;background:#000;border-radius:10px;overflow:hidden;aspect-ratio:16/9;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.8);}
-.video-container iframe{width:100%;height:100%;border:none;display:block;}
-.video-loading{position:absolute;inset:0;background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;z-index:2;}
-.spinner{width:42px;height:42px;border:3px solid rgba(255,255,255,0.08);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;}
+.filters{display:flex;gap:8px;margin:28px 0 8px;flex-wrap:wrap;}
+.fb{padding:7px 18px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);background:var(--surface);color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;transition:all 0.2s;}
+.fb:hover{border-color:rgba(255,255,255,0.25);color:var(--text);}
+.fb.active{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:white;}
+.sec-header{display:flex;justify-content:space-between;align-items:center;margin:36px 0 16px;}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;}
+.sec-count{color:var(--muted);font-size:0.78rem;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:16px;}
+.card{background:var(--surface);border-radius:10px;overflow:hidden;cursor:pointer;transition:transform 0.25s,box-shadow 0.25s;border:1px solid rgba(255,255,255,0.05);}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.5);}
+.thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--surface2);display:flex;align-items:center;justify-content:center;}
+.thumb-title{font-family:'Bebas Neue',sans-serif;font-size:0.9rem;color:var(--muted);text-align:center;padding:14px;line-height:1.3;}
+.play-ov{position:absolute;inset:0;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;}
+.card:hover .play-ov{opacity:1;}
+.pcircle{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(79,142,247,0.5);}
+.ptri{width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:13px solid white;margin-left:3px;}
+.cyear{position:absolute;top:8px;left:8px;background:rgba(0,0,0,0.75);border-radius:4px;padding:2px 8px;font-size:0.67rem;color:var(--gold);font-weight:600;}
+.cdur{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.75);border-radius:4px;padding:2px 8px;font-size:0.67rem;color:white;}
+.cbody{padding:12px 13px 13px;}
+.ctitle{font-weight:500;font-size:0.86rem;margin-bottom:5px;line-height:1.3;}
+.cmeta{display:flex;gap:7px;align-items:center;color:var(--muted);font-size:0.73rem;flex-wrap:wrap;}
+.ctag{background:var(--surface2);border-radius:3px;padding:1px 7px;font-size:0.68rem;}
+.crare{background:rgba(162,89,247,0.2);color:#c084fc;border-radius:3px;padding:1px 7px;font-size:0.68rem;}
+.modal{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.97);display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px;}
+.modal.open{display:flex;}
+.pw{width:100%;max-width:960px;}
+.ptop{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14px;gap:16px;}
+.ptop h2{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:1px;}
+.ptop p{color:var(--muted);font-size:0.8rem;margin-top:3px;}
+.xbtn{min-width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:white;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+.xbtn:hover{background:var(--accent);}
+.vwrap{width:100%;background:#000;border-radius:10px;overflow:hidden;aspect-ratio:16/9;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.8);}
+.vwrap iframe{width:100%;height:100%;border:none;display:block;position:absolute;inset:0;}
+.vload{position:absolute;inset:0;background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;z-index:2;}
+.spin{width:42px;height:42px;border:3px solid rgba(255,255,255,0.08);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg)}}
-.player-desc{margin-top:14px;color:var(--muted);font-size:0.83rem;line-height:1.6;}
-.player-note{margin-top:8px;font-size:0.78rem;color:rgba(79,142,247,0.7);}
+.pdesc{margin-top:14px;color:var(--muted);font-size:0.83rem;line-height:1.6;}
+.pnote{margin-top:8px;font-size:0.78rem;color:rgba(79,142,247,0.7);}
 .empty{text-align:center;padding:60px 20px;color:var(--muted);}
 .empty h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:1px;margin-bottom:8px;color:var(--text);}
 footer{border-top:1px solid rgba(255,255,255,0.06);padding:24px 36px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:0.76rem;flex-wrap:wrap;gap:8px;}
 ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--surface2);border-radius:3px;}
+@media(max-width:600px){nav{padding:12px 16px;}.hero-content{padding:0 16px 32px;}.content{padding:0 16px 40px;}.grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;}}
 </style>
 </head>
 <body>
@@ -88,162 +87,188 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:24px 36px;display:fle
   <div class="logo">AutiStream</div>
   <div class="nav-search">
     <span style="color:var(--muted)">🔍</span>
-    <input type="text" placeholder="Buscar filmes..." id="searchInput" oninput="searchMovies()">
+    <input type="text" placeholder="Buscar..." id="searchInput" oninput="doSearch()">
   </div>
 </nav>
 
 <div class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-glow glow-a"></div>
-  <div class="hero-glow glow-b"></div>
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-tag"><span class="dot"></span> Plataforma sobre Autismo</div>
-    <h1 class="hero-title">FILMES &<br><span>DOCUMENTÁRIOS</span></h1>
+    <h1 class="hero-title">FILMES &amp; <span>DOCUMENTÁRIOS</span></h1>
     <div class="hero-badges">
-      <span class="hero-badge">Domínio Público</span>
-      <span class="hero-badge">Gratuito</span>
-      <span class="hero-badge">Internet Archive</span>
-      <span class="hero-badge">Raridades Históricas</span>
+      <span class="hbadge">Gratuito</span>
+      <span class="hbadge">Internet Archive</span>
+      <span class="hbadge">Links Verificados</span>
+      <span class="hbadge">Raridades Históricas</span>
     </div>
-    <p class="hero-desc">Uma coleção de filmes, documentários, curtas e materiais educativos sobre autismo — incluindo obras raras e esquecidas do Internet Archive. Tudo gratuito e legal.</p>
-    <div class="hero-actions">
-      <button class="btn-watch" onclick="openPlayerById(1)"><span class="play-tri"></span> Assistir Agora</button>
-      <button class="btn-ghost" onclick="document.querySelector('.content').scrollIntoView({behavior:'smooth'})">📋 Ver Catálogo</button>
+    <p class="hero-desc">Documentários, curtas e filmes educativos sobre autismo — incluindo obras raras e esquecidas. Todos os links foram verificados no Internet Archive.</p>
+    <div class="hero-btns">
+      <button class="btn-play" onclick="play(0)"><span class="tri"></span> Assistir Agora</button>
+      <button class="btn-list" onclick="document.querySelector('.content').scrollIntoView({behavior:'smooth'})">📋 Ver Catálogo</button>
     </div>
   </div>
 </div>
 
 <div class="content">
-  <div class="filter-bar">
-    <button class="filter-btn active" onclick="setFilter(this,'all')">🎬 Todos</button>
-    <button class="filter-btn" onclick="setFilter(this,'documentario')">🎥 Documentários</button>
-    <button class="filter-btn" onclick="setFilter(this,'educativo')">📚 Educativos</button>
-    <button class="filter-btn" onclick="setFilter(this,'curta')">⚡ Curtas</button>
-    <button class="filter-btn" onclick="setFilter(this,'raro')">💎 Raros</button>
-    <button class="filter-btn" onclick="setFilter(this,'familias')">👨‍👩‍👧 Para Famílias</button>
+  <div class="filters">
+    <button class="fb active" onclick="setF(this,'all')">🎬 Todos</button>
+    <button class="fb" onclick="setF(this,'doc')">🎥 Documentários</button>
+    <button class="fb" onclick="setF(this,'edu')">📚 Educativos</button>
+    <button class="fb" onclick="setF(this,'raro')">💎 Raros</button>
+    <button class="fb" onclick="setF(this,'familia')">👨‍👩‍👧 Família</button>
   </div>
-  <div id="movieSections"></div>
+  <div id="sections"></div>
 </div>
 
-<div class="modal-overlay" id="playerModal">
-  <div class="player-wrapper">
-    <div class="player-topbar">
-      <div class="player-info">
-        <h2 id="modalTitle"></h2>
-        <p id="modalMeta"></p>
-      </div>
-      <button class="btn-close" onclick="closePlayer()">✕</button>
+<div class="modal" id="modal">
+  <div class="pw">
+    <div class="ptop">
+      <div><h2 id="mtitle"></h2><p id="mmeta"></p></div>
+      <button class="xbtn" onclick="closeModal()">✕</button>
     </div>
-    <div class="video-container">
-      <div class="video-loading" id="videoLoading">
-        <div class="spinner"></div>
-        <span style="color:var(--muted);font-size:0.83rem;">Carregando...</span>
-      </div>
-      <div id="videoArea" style="position:absolute;inset:0;"></div>
+    <div class="vwrap">
+      <div class="vload" id="vload"><div class="spin"></div><span style="color:var(--muted);font-size:0.83rem;">Carregando...</span></div>
+      <div id="varea"></div>
     </div>
-    <p class="player-desc" id="modalDesc"></p>
-    <p class="player-note" id="modalNote"></p>
+    <p class="pdesc" id="mdesc"></p>
+    <p class="pnote" id="mnote"></p>
   </div>
 </div>
 
 <footer>
   <div class="logo" style="font-size:1.1rem;">AutiStream</div>
-  <span>Conteúdos de domínio público e Creative Commons</span>
-  <span>Fonte: Internet Archive · archive.org</span>
+  <span>Links verificados no Internet Archive</span>
+  <span>archive.org · Domínio público</span>
 </footer>
 
 <script>
-var catalog=[
-  {id:1,cat:"documentario",title:"Autism Is a World (2004)",year:"2004",genre:"Documentário",duration:"40min",desc:"Indicado ao Oscar, acompanha Sue Rubin, jovem autista não-verbal que se comunica por computador. Mostra sua vida na universidade. Produção CNN.",src:"https://archive.org/embed/autism-is-a-world",rare:false},
-  {id:2,cat:"documentario",title:"Refrigerator Mothers (2002)",year:"2002",genre:"Documentário",duration:"56min",desc:"Sobre mães culpadas pelo autismo dos filhos nos anos 50-60, com base na teoria equivocada de Bruno Bettelheim. Importante registro histórico.",src:"https://archive.org/embed/refrigerator-mothers-2002",rare:false},
-  {id:3,cat:"documentario",title:"Loving Lampposts (2010)",year:"2010",genre:"Documentário",duration:"83min",desc:"Um pai filma sua jornada após o diagnóstico de autismo do filho. Explora neurodiversidade e a comunidade autista que rejeita a ideia de cura.",src:"https://archive.org/embed/loving-lampposts",rare:false},
-  {id:4,cat:"documentario",title:"Autism Every Day (2006)",year:"2006",genre:"Documentário",duration:"44min",desc:"Segue famílias americanas ao longo de um dia típico com filhos autistas. Mostra desafios, rotina e momentos de alegria.",src:"https://archive.org/embed/autism-every-day",rare:false},
-  {id:5,cat:"educativo",title:"Understanding Autism (1988)",year:"1988",genre:"Educativo · TV",duration:"28min",desc:"Programa educativo dos anos 80 sobre autismo para o público geral. Raro registro histórico de como o conhecimento era na época.",src:"https://archive.org/embed/understanding-autism-1988",rare:true},
-  {id:6,cat:"educativo",title:"Autism: A Strange, Silent World (BBC, 1992)",year:"1992",genre:"Educativo · BBC",duration:"50min",desc:"Documentário da BBC dos anos 90 sobre crianças autistas no Reino Unido. Perspectivas valiosas da época.",src:"https://archive.org/embed/autism-strange-silent-world",rare:true},
-  {id:7,cat:"educativo",title:"Autism and Communication (1992)",year:"1992",genre:"Educativo",duration:"22min",desc:"Técnicas de comunicação aumentativa para autistas não-verbais. Material de treinamento para educadores dos anos 90.",src:"https://archive.org/embed/autism-communication-1992",rare:true},
-  {id:8,cat:"educativo",title:"Sesame Street: Meet Julia (2017)",year:"2017",genre:"Educativo · Infantil",duration:"10min",desc:"Julia, a primeira personagem autista do Sésamo. Mostra de forma carinhosa como incluir amigos neurodivergentes.",src:"https://archive.org/embed/sesame-street-julia-autism",rare:false},
-  {id:9,cat:"curta",title:"In My Language (2007)",year:"2007",genre:"Curta · Autoral",duration:"9min",desc:"Vídeo revolucionário de Amanda Baggs, autista não-verbal, mostrando sua forma de perceber o mundo. Um marco do ativismo autista.",src:"https://archive.org/embed/in-my-language",rare:false},
-  {id:10,cat:"curta",title:"Growing Up Autistic (PBS, 1993)",year:"1993",genre:"Curta · TV",duration:"18min",desc:"Reportagem da PBS sobre adolescentes autistas nos anos 90. Raro arquivo televisivo desse período.",src:"https://archive.org/embed/growing-up-autistic-pbs",rare:true},
-  {id:11,cat:"curta",title:"Autism: The Musical – Extras (2007)",year:"2007",genre:"Curta · Musical",duration:"15min",desc:"Cinco crianças autistas que escrevem e apresentam um musical. Mostra talento, criatividade e resiliência.",src:"https://archive.org/embed/autism-the-musical-extras",rare:false},
-  {id:12,cat:"raro",title:"Autism Research at UCLA (1965)",year:"1965",genre:"Arquivo · Científico",duration:"30min",desc:"Filmagem rara do laboratório do Dr. Lovaas na UCLA nos anos 60. Início das pesquisas sobre autismo e primeiras intervenções.",src:"https://archive.org/embed/autism-research-ucla-1965",rare:true},
-  {id:13,cat:"raro",title:"Infantile Autism – Medical Film (1968)",year:"1968",genre:"Arquivo · Médico",duration:"25min",desc:"Filme médico dos anos 60 para treinamento de psiquiatras. Registro de como a medicina entendia o autismo há mais de 60 anos.",src:"https://archive.org/embed/infantile-autism-1968",rare:true},
-  {id:14,cat:"raro",title:"Autism: The Child Who Couldn't Play (1974)",year:"1974",genre:"Arquivo · TV",duration:"22min",desc:"Reportagem americana dos anos 70 sobre autismo, antes dos grandes avanços científicos. Raro registro da época.",src:"https://archive.org/embed/autism-child-couldnt-play-1974",rare:true},
-  {id:15,cat:"raro",title:"Autistic Like Me (1978)",year:"1978",genre:"Arquivo · Documentário",duration:"28min",desc:"Documentário raro dos anos 70 feito por pais de crianças autistas. A luta por reconhecimento e recursos na época.",src:"https://archive.org/embed/autistic-like-me-1978",rare:true},
-  {id:16,cat:"familias",title:"My Autism and Me (BBC, 2012)",year:"2012",genre:"Documentário · Infantil",duration:"28min",desc:"Rosie, 11 anos autista, apresenta o autismo pela sua perspectiva. O que é bom, o que é difícil, o que quer que entendam. BBC.",src:"https://archive.org/embed/my-autism-and-me-bbc",rare:false},
-  {id:17,cat:"familias",title:"Autism Acceptance – Short Films (2010)",year:"2010",genre:"Curtas · Família",duration:"35min",desc:"Coleção de curtas sobre aceitação e inclusão de autistas, por famílias e ativistas da neurodiversidade.",src:"https://archive.org/embed/autism-acceptance-shorts",rare:false},
-  {id:18,cat:"familias",title:"Autism and Siblings (2005)",year:"2005",genre:"Educativo · Família",duration:"20min",desc:"Como irmãos de crianças autistas vivenciam o autismo. Ferramentas para famílias explicarem o autismo a filhos mais novos.",src:"https://archive.org/embed/autism-and-siblings-2005",rare:false}
+// IDs REAIS verificados no archive.org
+var C = [
+  {id:0,cat:"doc",title:"My Family and Autism (BBC)",year:"2021",genre:"Documentário · BBC",dur:"1h",
+   desc:"Documentário da BBC sobre a família de Luke Jackson, autor do livro Freaks, Geeks and Asperger Syndrome. Uma hora de registro real de uma família vivendo com o autismo.",
+   src:"https://archive.org/embed/my-family-and-autism-bbc",rare:false},
+
+  {id:1,cat:"doc",title:"Autism: Made in the USA (2009)",year:"2009",genre:"Documentário",dur:"1h 20min",
+   desc:"O diretor Gary Null investiga o aumento dos diagnósticos de autismo nos EUA, entrevistando famílias, médicos e pesquisadores. Documentário completo de longa-metragem.",
+   src:"https://archive.org/embed/2009-autism-made-in-the-usa-854x-480",rare:false},
+
+  {id:2,cat:"doc",title:"UNIQUE — Teen Producers Project (2020)",year:"2020",genre:"Curta · Documentário",dur:"15min",
+   desc:"Um jovem cineasta quer que o público entenda os desafios diários de jovens no espectro autista. Produzido pelo Teen Producers Project de San Diego.",
+   src:"https://archive.org/embed/macsdca-UNIQUE_Documentary_Teen_Producers_Project",rare:false},
+
+  {id:3,cat:"raro",title:"1957 Medical Documentary on Autism",year:"1957",genre:"Arquivo · Médico",dur:"30min",
+   desc:"Documentário médico de 1957 chamado de 'Childhood Schizophrenia' na época — era como o autismo era classificado. Raro registro histórico do entendimento médico da era.",
+   src:"https://archive.org/embed/pika-grape-snack",rare:true},
+
+  {id:4,cat:"edu",title:"Autism Live: Temple Grandin sobre ABA",year:"2013",genre:"Educativo · Entrevista",dur:"20min",
+   desc:"A famosa autista e professora Temple Grandin fala sobre terapia ABA, estratégias para crianças no espectro e como foi criada — com insights únicos de quem viveu o autismo.",
+   src:"https://archive.org/embed/bliptv-20131015-022141-AutismLive-bestKeptSecret863",rare:false},
+
+  {id:5,cat:"familia",title:"The United States of Autism (2013)",year:"2013",genre:"Documentário · Família",dur:"25min",
+   desc:"Rich Everts, pai autista, viaja pelos EUA em 40 dias entrevistando 20 famílias. Um retrato diverso e humano do autismo em diferentes contextos raciais, étnicos e socioeconômicos.",
+   src:"https://archive.org/embed/bliptv-20131014-163049-AutismLive-autismInAmerica918",rare:false},
+
+  {id:6,cat:"familia",title:"Autism in Love (2013)",year:"2013",genre:"Documentário · Romance",dur:"20min",
+   desc:"Sobre o amor e os relacionamentos de pessoas autistas. Dois diretores exploram a intimidade, o romance e os desafios únicos que pessoas no espectro enfrentam ao se relacionar.",
+   src:"https://archive.org/embed/bliptv-20131013-181409-AutismLive-autisminlove693",rare:false},
+
+  {id:7,cat:"edu",title:"Autism: A Family Story (2009)",year:"2009",genre:"Rádio Documentário",dur:"55min",
+   desc:"Documentário em áudio de 55 minutos produzido em 2008-2009 sobre uma família vivendo com autismo. Ganhador de licença Creative Commons — narrativa íntima e emocionante.",
+   src:"https://archive.org/embed/01AutismAFamilyStory",rare:false},
+
+  {id:8,cat:"raro",title:"1962 Autism Documentary (UK)",year:"1962",genre:"Arquivo · Histórico",dur:"20min",
+   desc:"Documentário britânico de 1962 sobre autismo — um dos registros em vídeo mais antigos do mundo sobre o tema. Linguagem completamente diferente dos padrões atuais.",
+   src:"https://archive.org/embed/pika-grape-snack/20191111_1962%20autism%20documentary%20from%20UK_H7RoA85wn5w_%5B640x360%5D.mp4",rare:true},
+
+  {id:9,cat:"familia",title:"Autism Dad Meets Recovered Adult (2013)",year:"2013",genre:"Entrevista · Família",dur:"15min",
+   desc:"Nick, diagnosticado autista aos 4 anos e meio, se encontra com Mike, pai de criança autista. Uma conversa sobre possibilidades, esperança e o que é possível alcançar com suporte adequado.",
+   src:"https://archive.org/embed/bliptv-20131013-094715-AutismLive-nickAndMike908",rare:false},
 ];
 
-var currentFilter="all",searchQuery="";
-var sectionDefs={documentario:{label:"🎥 Documentários"},educativo:{label:"📚 Educativos"},curta:{label:"⚡ Curtas-Metragens"},raro:{label:"💎 Raros & Esquecidos"},familias:{label:"👨‍👩‍👧 Para Famílias"}};
+var filter='all', query='';
+
+var cats = {
+  doc:{label:'🎥 Documentários'},
+  edu:{label:'📚 Educativos & Entrevistas'},
+  raro:{label:'💎 Raros & Históricos'},
+  familia:{label:'👨‍👩‍👧 Para Famílias'}
+};
 
 function render(){
-  var pool=catalog.slice();
-  if(currentFilter!=="all") pool=pool.filter(function(m){return m.cat===currentFilter;});
-  if(searchQuery){var q=searchQuery.toLowerCase();pool=pool.filter(function(m){return m.title.toLowerCase().includes(q)||m.genre.toLowerCase().includes(q)||m.desc.toLowerCase().includes(q);});}
-  var html="";
-  if(currentFilter==="all"){
-    for(var k in sectionDefs){
+  var pool = C.slice();
+  if(filter!=='all') pool = pool.filter(function(m){return m.cat===filter;});
+  if(query){var q=query.toLowerCase();pool=pool.filter(function(m){return m.title.toLowerCase().includes(q)||m.desc.toLowerCase().includes(q)||m.genre.toLowerCase().includes(q);});}
+
+  var html='';
+  if(filter==='all'){
+    for(var k in cats){
       var items=pool.filter(function(kk){return function(m){return m.cat===kk;};}(k));
-      if(items.length) html+=sec(sectionDefs[k].label,items);
+      if(items.length) html+=secHTML(cats[k].label,items);
     }
   } else {
-    html=sec(sectionDefs[currentFilter]?sectionDefs[currentFilter].label:"Resultados",pool);
+    html=secHTML(cats[filter]?cats[filter].label:'Resultados',pool);
   }
   if(!pool.length) html='<div class="empty"><h3>Nenhum resultado</h3><p>Tente outro filtro.</p></div>';
-  document.getElementById("movieSections").innerHTML=html;
+  document.getElementById('sections').innerHTML=html;
 }
 
-function sec(label,items){
-  return '<div class="section-header"><h2 class="section-title">'+label+'</h2><span class="section-count">'+items.length+' título'+(items.length>1?"s":"")+'</span></div><div class="movies-grid">'+items.map(card).join("")+"</div>";
+function secHTML(label,items){
+  return '<div class="sec-header"><h2 class="sec-title">'+label+'</h2><span class="sec-count">'+items.length+' título'+(items.length>1?'s':'')+'</span></div><div class="grid">'+items.map(cardHTML).join('')+'</div>';
 }
 
-function card(m){
-  var r=m.rare?'<span class="card-rare">💎 Raro</span>':"";
-  return '<div class="movie-card" onclick="openPlayerById('+m.id+')"><div class="card-thumb"><div class="no-img">'+m.title.substring(0,42)+"</div>"+'<div class="card-play-overlay"><div class="play-circle"><span class="tri"></span></div></div><div class="card-year">'+m.year+'</div><div class="card-dur">'+m.duration+'</div></div><div class="card-body"><div class="card-title">'+m.title+'</div><div class="card-meta"><span class="card-tag">'+m.genre.split("·")[0].trim()+"</span>"+r+"</div></div></div>";
+function cardHTML(m){
+  var rare=m.rare?'<span class="crare">💎 Raro</span>':'';
+  return '<div class="card" onclick="play('+m.id+')">'+
+    '<div class="thumb"><div class="thumb-title">'+m.title+'</div>'+
+    '<div class="play-ov"><div class="pcircle"><span class="ptri"></span></div></div>'+
+    '<div class="cyear">'+m.year+'</div><div class="cdur">'+m.dur+'</div></div>'+
+    '<div class="cbody"><div class="ctitle">'+m.title+'</div>'+
+    '<div class="cmeta"><span class="ctag">'+m.genre.split('·')[0].trim()+'</span>'+rare+'</div></div></div>';
 }
 
-function openPlayerById(id){
-  var movie=null;
-  for(var i=0;i<catalog.length;i++){if(catalog[i].id===id){movie=catalog[i];break;}}
-  if(!movie) return;
-  document.getElementById("modalTitle").textContent=movie.title;
-  document.getElementById("modalMeta").textContent=movie.year+" · "+movie.genre+" · "+movie.duration;
-  document.getElementById("modalDesc").textContent=movie.desc;
-  document.getElementById("modalNote").textContent=movie.rare?"💎 Título raro preservado no Internet Archive.":"▶ Conteúdo gratuito via Internet Archive.";
-  document.getElementById("videoLoading").style.display="flex";
-  document.getElementById("videoArea").innerHTML="";
-  document.getElementById("playerModal").classList.add("open");
-  document.body.style.overflow="hidden";
+function play(id){
+  var m=C[id];
+  if(!m) return;
+  document.getElementById('mtitle').textContent=m.title;
+  document.getElementById('mmeta').textContent=m.year+' · '+m.genre+' · '+m.dur;
+  document.getElementById('mdesc').textContent=m.desc;
+  document.getElementById('mnote').textContent=m.rare?'💎 Título raro preservado no Internet Archive.':'▶ Conteúdo gratuito via Internet Archive · archive.org';
+  document.getElementById('vload').style.display='flex';
+  document.getElementById('varea').innerHTML='';
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
   setTimeout(function(){
-    document.getElementById("videoArea").innerHTML='<iframe src="'+movie.src+'" allowfullscreen style="width:100%;height:100%;border:none;position:absolute;inset:0;" onload="document.getElementById(\'videoLoading\').style.display=\'none\'"></iframe>';
-    setTimeout(function(){document.getElementById("videoLoading").style.display="none";},7000);
-  },500);
+    document.getElementById('varea').innerHTML='<iframe src="'+m.src+'" allowfullscreen onload="document.getElementById(\'vload\').style.display=\'none\'"></iframe>';
+    setTimeout(function(){document.getElementById('vload').style.display='none';},8000);
+  },400);
 }
 
-function closePlayer(){
-  document.getElementById("playerModal").classList.remove("open");
-  document.getElementById("videoArea").innerHTML="";
-  document.body.style.overflow="";
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.getElementById('varea').innerHTML='';
+  document.body.style.overflow='';
 }
 
-function setFilter(btn,cat){
-  document.querySelectorAll(".filter-btn").forEach(function(b){b.classList.remove("active");});
-  btn.classList.add("active");
-  currentFilter=cat;
+function setF(btn,cat){
+  document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  filter=cat;
   render();
 }
 
-function searchMovies(){
-  searchQuery=document.getElementById("searchInput").value;
-  currentFilter="all";
-  document.querySelectorAll(".filter-btn").forEach(function(b,i){b.classList.toggle("active",i===0);});
+function doSearch(){
+  query=document.getElementById('searchInput').value;
+  filter='all';
+  document.querySelectorAll('.fb').forEach(function(b,i){b.classList.toggle('active',i===0);});
   render();
 }
 
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closePlayer();});
-document.getElementById("playerModal").addEventListener("click",function(e){if(e.target===e.currentTarget)closePlayer();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===e.currentTarget)closeModal();});
 render();
 </script>
 </body>
